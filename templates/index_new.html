@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>loan prediction system</title>
+	 <!-- <link rel="stylesheet" type="text/css" href="prediction_system.css">  -->
+</head>
+<body>
+
+	<div id="prntchld">
+
+        <h1>Loan Prediction</h1>
+
+		<form action="{{ url_for('predict')}}" method="post">
+			
+	        <label>Married</label><br/>
+	        <select id="mrd">
+		        <option>select</option>
+		        <option value='Yes'>Yes</option>
+		        <option value='No'>No</option>
+	        </select>
+
+	        <br/><br/>
+
+	        <label>Dependents</label><br/>
+	        <select>
+		        <option>select </option>
+		        <option value="0">0</option>
+		        <option value="1">1</option>
+		        <option value="2">2</option>
+		        <option value="3">3</option>
+	        </select>
+
+	        <br/><br/>
+
+	        <label>Education</label><br/>
+	        <select>
+		        <option>Select</option>
+		        <option value="Graduate">Gratuate</option>
+		        <option value="Non Graduate">Non Graduate</option>
+	        </select>
+
+	        <br/><br/>
+	
+
+	        <label>Loan Amount</label><br/>
+	        <input type="text" name="number" placeholder="Input Loan Amount" />
+
+	        <br/><br/>
+
+	        <label>Loan Amount Term</label><br/>
+	        <input type="text" name="term" placeholder="enter loan amount term" />
+
+	        <br/><br/>
+
+	        <label>Income</label><br/>
+	        <input type="text" name="income" placeholder="enter your income here">
+
+	        <br/><br/>
+
+	        <label>Property Area</label><br/>
+	        <select>
+		        <option>select</option>
+		        <option value="Urban">Urban</option>
+		        <option value="Rural">Rural</option>
+		        <option value="Semiurban">Semiurban</option>
+	        </select>
+
+	        <br/><br/>
+
+	        <label>Credit History</label><br/>
+	        <input type="text" placeholder="credit history" value="" />
+
+	        <br/><br/>
+            <button id="sub" type="submit ">Predict</button><br/><br/>
+		</form>
+
+	</div>
+
+	<div id="prdcttxt">
+		<br><h3>{{Prediction_texts}}</h3>
+				
+	</div>
+	
+
+
+	<style type="text/css">
+		body{
+	display: flex;
+	justify-content: center;
+
+}
+
+#prntchld{
+	margin-top: 30px;
+	background-color: grey;
+	width: 60%;
+	height: 95vh;
+	display:grid;
+	justify-content: center;
+	border-radius: 25px;
+
+}
+
+#prdcttxt{
+	display: flex;
+	justify-content: center;
+	margin-top: 150px;
+	margin-left: 10px;
+	background-color: grey;
+	width: 30%;
+	height: 40vh;
+}
+
+#mrd{
+	width: 80px;
+}
+	</style>
+
+</body>
+</html>
